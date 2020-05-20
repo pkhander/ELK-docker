@@ -4,7 +4,11 @@
   yum:
     name: "{{ item }}"
     state: present
-  with_items: "{{ packages_preparation }}"
+  with_items:
+    - python-pip
+    - docker
+    - device-mapper-libs
+    - device-mapper-event-libs
 
 - name: Install pip
   pip:
@@ -19,4 +23,6 @@
 - name: Install pip dependencies
   pip:
     name: "{{ item }}"
-  with_items: "{{ pip_dependencies }}"
+  with_items:
+    - docker-pycreds
+    - dockerpty
