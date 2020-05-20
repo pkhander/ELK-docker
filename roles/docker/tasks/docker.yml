@@ -1,0 +1,21 @@
+---
+
+- name: create docker group
+  group:
+    grid: 1991
+    name: docker
+    state: present
+
+- name: add docker group
+  user:
+    name: "{{item}}"
+    groups: docker
+    append: true
+  with_items: "{{users}}"
+
+- name: enable docker services
+  services:
+    name: docker
+    enable: true
+    state: started
+    
