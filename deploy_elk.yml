@@ -1,0 +1,14 @@
+---
+
+#Playbook to deploy Dockerized ELK Stack
+
+- name: Deploy ELK Server
+  hosts: elk-server
+  become: yes
+  become_user: root
+  remote_user: fedora
+  roles: 
+    - docker
+    - elk-docker
+  tags:
+    - filebeat
