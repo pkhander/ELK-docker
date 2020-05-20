@@ -6,9 +6,7 @@
   hosts: elk-server
   become: yes
   become_user: root
-  remote_user: fedora
+  remote_user: centos
   roles: 
     - docker
-    - elk-docker
-  tags:
-    - filebeat
+    - elkstack

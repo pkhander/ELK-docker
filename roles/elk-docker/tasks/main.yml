@@ -1,6 +1,0 @@
----
-
-- include_tasks: logstash-docker-config.yml
-
-- include_tasks: elk.yml
-

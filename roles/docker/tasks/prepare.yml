@@ -4,7 +4,7 @@
   yum:
     name: "{{ item }}"
     state: present
-  with_items: "{{ package_preparation }}"
+  with_items: "{{ packages_preparation }}"
 
 - name: Install pip
   pip:
