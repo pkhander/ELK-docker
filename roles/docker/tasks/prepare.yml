@@ -2,13 +2,8 @@
 
 - name: Install Docker CE 
   yum:
-    name: "{{ item }}"
+    name: ["python-pip", "docker", "device-mapper-libs", "device-mapper-event-libs"]
     state: present
-  with_items:
-    - python-pip
-    - docker
-    - device-mapper-libs
-    - device-mapper-event-libs
 
 - name: Install pip
   pip:
@@ -22,7 +17,4 @@
 
 - name: Install pip dependencies
   pip:
-    name: "{{ item }}"
-  with_items:
-    - docker-pycreds
-    - dockerpty
+    name: ["docker-pycreds", "dockerpty"]
