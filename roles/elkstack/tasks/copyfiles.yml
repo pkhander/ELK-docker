@@ -1,0 +1,14 @@
+---
+
+- name: Create directory for elasticsearch
+  file:
+    path: "/home/centos/elasticsearch"
+    state: directory
+    mode: u=rwx,o=rwx,g=rwx
+
+- name: Copy elasticsearch.yml
+  template:
+    src: "elasticsearch.yml"
+    dest: "/home/centos/elasticsearch/elasticsearch.yml"
+    mode: u=rwx,o=rwx,g=rwx
+
