@@ -1,7 +1,7 @@
 ---
 
 - name: Deploy Elastic stack
-  docker_service:
+  docker_compose:
     project_name: "elk_docker"
     definition:
       version: "2"

@@ -3,7 +3,7 @@
 #Playbook to deploy Dockerized ELK Stack
 
 - name: Deploy ELK Server
-  hosts: elk-server
+  hosts: elk_server
   become: yes
   become_user: root
   remote_user: centos
